@@ -34,6 +34,7 @@ export class CreateUserDto {
 
   @ApiPropertyOptional({ example: 'john@example.com' })
   @IsOptional()
+  @ValidateIf((o) => o.email && o.email.trim() !== '')
   @IsEmail()
   email?: string;
 
