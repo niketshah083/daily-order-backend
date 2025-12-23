@@ -17,8 +17,8 @@ export class CommonConstants {
   }
 
   static ORDER_APPROVAL_TIMING = {
-    MORNING: ['10:00 AM', '4:59 PM'],
-    EVENING: ['5:00 PM', '11:00 PM'],
+    MORNING: ['10:00 AM', '2:00 PM'],
+    EVENING: ['2:00 PM', '11:00 PM'],
   };
 
   static IS_ORDER_APPROVAL_WINDOW_OPEN = true;
