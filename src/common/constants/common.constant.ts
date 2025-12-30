@@ -21,5 +21,5 @@ export class CommonConstants {
     EVENING: ['2:00 PM', '11:00 PM'],
   };
 
-  static IS_ORDER_APPROVAL_WINDOW_OPEN = true;
+  static IS_ORDER_APPROVAL_WINDOW_OPEN = false;
 }
