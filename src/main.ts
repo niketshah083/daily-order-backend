@@ -7,7 +7,7 @@ import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
   // Enable CORS
   app.enableCors();
 
@@ -22,6 +22,18 @@ async function bootstrap() {
 
   app.useGlobalInterceptors(new TransformInterceptor());
   app.useGlobalInterceptors(new LoggingInterceptor());
+
+  app.use((req, res, next) => {
+    if (req.method === 'OPTIONS') {
+      res.set({
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+        'Access-Control-Allow-Headers': '*',
+      });
+      return res.sendStatus(200);
+    }
+    next();
+  });
 
   // Swagger configuration
   const config = new DocumentBuilder()
