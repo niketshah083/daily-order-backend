@@ -565,7 +565,7 @@ export class OrdersService {
 
     const { screen, data, version, action, flow_token } = decryptedBody;
     console.log({ screen, data, version, action, flow_token });
-
+    console.log('Decrypted Body: ', decryptedBody);
     if (action === 'ping') {
       const pingResponse = { data: { status: 'active' } };
       return EncryptionUtils.encryptResponse(
