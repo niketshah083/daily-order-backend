@@ -127,7 +127,7 @@ export class WhatsappUtils {
             name: 'cta_url',
             parameters: {
               display_text: 'Online Order Manage',
-              url: `https://dailyorder.accomation.io`,
+              url: `https://dailyorder.kanjconsultant.com`,
             },
           },
         } as any,
