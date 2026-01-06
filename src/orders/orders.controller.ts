@@ -59,10 +59,7 @@ export class OrdersController {
   async processWhatsappData(@Req() req: Request, @Res() res: Response) {
     try {
       const data = await this.ordersService.processWhatsappData(req.body);
-      res
-        .status(HttpStatus.OK)
-        .set('Content-Type', 'application/json')
-        .json(data);
+      res.send(data);
     } catch (error) {
       throw error;
     }
