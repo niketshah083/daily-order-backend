@@ -92,7 +92,6 @@ export class WhatsappUtils {
               flow_token: `order_submitted~${String(toMobileNo).slice(-10)}`,
               flow_id: '701218376374461',
               flow_cta: 'Quick Order Now!',
-              mode: 'draft',
             },
           },
         } as any,
