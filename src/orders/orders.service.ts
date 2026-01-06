@@ -575,16 +575,16 @@ export class OrdersService {
       );
     } else if (action === 'INIT') {
       const mobileNo = flow_token.split('~')?.[1];
-      const user = await this.userRepo.findOne({
-        where: { phoneNo: mobileNo },
-      });
-      const items = await this.itemRepo.find({
-        where: { tenantId: user?.tenantId },
-      });
+      // const user = await this.userRepo.findOne({
+      //   where: { phoneNo: mobileNo },
+      // });
+      // const items = await this.itemRepo.find({
+      //   where: { tenantId: user?.tenantId },
+      // });
       const ORDER_ITEMS = {};
-      items.forEach((it, index) => {
-        ORDER_ITEMS[`item${index + 1}`] = `${it.name}~(₹${it.rate})`;
-      });
+      // items.forEach((it, index) => {
+      //   ORDER_ITEMS[`item${index + 1}`] = `${it.name}~(₹${it.rate})`;
+      // });
       const SCREEN_RESPONSES = {
         screen: 'ORDER',
         data: {
